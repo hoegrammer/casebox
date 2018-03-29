@@ -3,7 +3,7 @@ Ubuntu 14.04
 
 Thanks to @RafaPolit for this guide.
 
-# Casebox on Ubuntu 14.04
+# Casebox on Ubuntu 14.04 or 16.04
 
 Start with a clean install and make sure the software is up to date:
 `$ sudo apt-get update`
@@ -25,13 +25,13 @@ For *developer* mode on local server
 ## Install MySQL 5.x
 * When configuring root password, the casebox install script had issues with special characters.  Avoid quotes and other characters to prevent conflicts:
 
-`$ sudo apt-get install mysql-server php5-mysql`
+`$ sudo apt-get install mysql-server php-mysql`
 `$ sudo mysql_install_db`
 For security reasons, run:
 `$ sudo mysql_secure_installation`
 
-## Insatll PHP 5.x
-`$ sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-mysqlnd`
+## Insatll PHP
+`$ sudo apt-get install php libapache2-mod-php php-mcrypt`
 
 ## Install JAVA (1.7+)
 `$ sudo apt-get install default-jdk`
@@ -51,8 +51,8 @@ Follow on-screen instructions and then confirm by running
 
 ## Install Imagemagick and imagick for php
 `$ sudo apt-get install imagemagick`
-`$ sudo apt-get install php5-imagick`
-`$ sudo php5enmod imagick`
+`$ sudo apt-get install php-imagick`
+`$ sudo phpenmod imagick`
 `$ sudo service apache2 restart`
 
 ## Clone and install the project
@@ -86,6 +86,8 @@ __Important !__
 
 `127.0.0.1  casebox.local`
 - Add this to the **/etc/apache2/sites-available/000-default.conf** file (changing to your own configuration options for names, ports, etc.).  We are overriding the default port:80 localhost, so, you may need to change or delete the default Apache virtual host.  You may also configure the casebox virtual host on a different port
+
+**replace php5 with your version**
 
 .. code-block:: xml
 
